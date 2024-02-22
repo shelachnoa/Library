@@ -1,0 +1,40 @@
+<div class="container-fluid">
+    <div class="container mt-4 pt-3">
+        <div class="row m-4">
+            <div class="col-10">
+                <h1 class="m-0 pb-1 headline">Books</h1>
+                <p class="subtitle">Get and manage your book repository</p>
+            </div>
+            <div class="col-2">
+                <button mat-raised-button color="primary" (click)="openAddBookDialog()">Add new book</button>
+            </div>
+        </div>
+    </div>
+    <!-- <label for="search-box">book Search</label>
+    <input #searchBox id="search-box" (input)="searchBookByName(searchBox.value)" /> -->
+    <div class="container">
+
+        <mat-form-field class="w-100" floatLabel="always">
+            <!-- <mat-label>Type book name to search...</mat-label> -->
+            <input placeholder="Type book name to search..." #searchBox id="search-box"
+                (input)="searchBookByName(searchBox.value)" matInput type="text">
+        </mat-form-field> 
+        <div class="row">
+            <div *ngFor="let book of displayedBooks" class="col-2 mb-3">
+                <app-book  [book]="book"></app-book>
+            </div>
+            <!-- <app-add-book></app-add-book> -->
+        </div>
+    </div>
+</div>
+<div class="d-flex justify-content-center">
+    <mat-paginator
+      [length]="books.length"
+      [pageSize]="itemsPerPage"
+      [pageSizeOptions]="pageSizeOptions"
+      (page)="onPageChange($event)">
+    </mat-paginator>
+  </div>
+
+
+  

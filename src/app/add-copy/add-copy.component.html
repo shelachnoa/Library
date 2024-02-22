@@ -1,0 +1,12 @@
+<h2 mat-dialog-title><div>Add Copy</div></h2>
+<mat-dialog-content>
+    <form (ngSubmit)="addCopies()" #bookForm="ngForm" class="form-book">
+
+        <mat-form-field hideRequiredMarker class="w-100">
+            <mat-label>Copies Number</mat-label>
+            <input name="amountOfCopies" [(ngModel)]="numOfCopies" type="number" matInput required>
+        </mat-form-field>
+        <br>
+        <button mat-button type="submit" mat-dialog-close>Add</button>
+    </form>
+</mat-dialog-content>

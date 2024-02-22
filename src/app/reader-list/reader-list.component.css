@@ -1,0 +1,28 @@
+.add-button{
+    position: fixed;
+    z-index: 1;
+}
+.headline{
+    font-size: xx-large;
+    font-weight: bold;
+    color: rgb(72, 72, 207);
+}
+.subtitle{
+    font-weight: bold;
+}
+@font-face {
+    font-family: 'armana';
+    src: url('../font/Amaranth-Regular.ttf');
+}
+
+*{
+    font-family: 'armana';
+}
+h1{
+    font-family: 'armana';
+
+}
+button{
+    font-family: 'armana';
+
+}

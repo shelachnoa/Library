@@ -1,0 +1,40 @@
+.exp-pannel{
+    min-height: 10vh;
+  
+}
+.reader{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.reader{
+    font-size: large;
+}
+.title>p{
+    font-size: large;
+    font-weight: bold;
+    /* border: 1px solid red; */
+}
+.bookImg{
+    border-radius: 5px 0 0 0;
+}
+.exp-pannel>.title{
+border: 2px solid green;
+}
+.late{
+    font-size: smaller;
+    color: red;
+}
+.example-header-image {
+    background-image: url('https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png');
+    background-size: cover;
+  }
+
+  @font-face {
+    font-family: 'armana';
+    src: url('../font/Amaranth-Regular.ttf');
+}
+
+h2, h1{
+    font-family: 'armana';
+}

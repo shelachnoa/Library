@@ -1,0 +1,54 @@
+
+<div class="container-fluid">
+    <div class="container mt-5 mb-3">
+        <div class="row">
+            <div class="col-8 mb-4">
+                <h1 class="m-0 pb-1 headline">Borrowings</h1>
+                <p class="subtitle">Get and Manage your borrowings repository</p>
+            </div>
+            <div class="col-3 control-button">
+                <button *ngIf="addBtn" mat-flat-button color="primary"  (click)="openAddBorrowingDialog()">Add new borrowing</button>
+            </div>
+            <div class="col-1">
+                <button *ngIf="!backBtn" mat-flat-button color="primary" (click)="getOldBorrowings()">Archive</button>
+                <button *ngIf="backBtn" mat-flat-button color="accent" (click)="toggleBtns()">Back</button>
+            </div>
+        </div>
+
+        <mat-tab-group *ngIf="!backBtn">
+            <mat-tab label="Book Code"> 
+                <div class="container mt-3">
+                    <mat-form-field class="w-100" floatLabel="always">
+                        <!-- <mat-label>Type book name to search...</mat-label> -->
+                        <input placeholder="Type book code to search..." #searchBox id="search-box"
+                            (input)="searchBorrowingByBookCode(searchBox.value)" matInput type="number" min="0">
+                    </mat-form-field> 
+                </div>
+             </mat-tab>
+            <mat-tab label="Reader name"> 
+                <div class="container mt-3">
+                    <mat-form-field class="w-100" floatLabel="always">
+                        <!-- <mat-label>Type book name to search...</mat-label> -->
+                        <input placeholder="Type reader name to search..." #searchreaderBox id="search-box"
+                            (input)="searchBorrowingByReaderName(searchreaderBox.value)" matInput type="text">
+                    </mat-form-field> 
+                </div>
+             </mat-tab>
+            <mat-tab label="Borrow date"> 
+                <div class="container mt-3">
+                    <mat-form-field class="w-100" floatLabel="always">
+                        <!-- <mat-label>Type book name to search...</mat-label> -->
+                        <input placeholder="Type boorrow date to search..." #searchdateBox id="search-box"
+                            (input)="searchBorrowingByBorrowDate(searchdateBox.value)" matInput type="date">
+                    </mat-form-field> 
+                </div>
+             </mat-tab>
+          </mat-tab-group>
+
+          
+        
+        <mat-accordion *ngFor="let borrowing of displayedBorrowings">
+            <app-borrowing [borrowing]="borrowing"></app-borrowing>
+        </mat-accordion>
+    </div>
+</div>

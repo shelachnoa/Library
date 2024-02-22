@@ -1,0 +1,21 @@
+.example-header-image {
+    background-image: url('https://cdn.pixabay.com/photo/2017/11/10/05/46/group-2935521_640.png');
+    background-size: cover;
+  }
+  .underline {
+    border-bottom: 1px solid black;
+    margin-top: 10px; /* Adjust the margin as needed */
+  }
+  
+
+  .total{
+    font-weight: bold;
+  }
+  @font-face {
+    font-family: 'armana';
+    src: url('../font/Amaranth-Regular.ttf');
+}
+
+h1{
+    font-family: 'armana';
+}

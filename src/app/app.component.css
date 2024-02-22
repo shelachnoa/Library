@@ -1,0 +1,43 @@
+/* .navber{
+    justify-content: space-between;
+} */
+span{
+    padding-right: 1rem;
+    /* border: 1px solid red; */
+}
+a{
+    color: white;
+    text-decoration: none;
+    /* border: 1px solid red; */
+   }
+
+
+   @font-face {
+    font-family: 'armana';
+    src: url('./font/Amaranth-Regular.ttf');
+}
+*{
+    font-family: 'armana';
+}
+
+ /* a:hover::after {
+    width: 100%;
+  } */
+  .navbar span::after,
+  .navbar a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px; /* Change this to your desired underline height */
+    background-color: transparent; /* Change this to your desired underline color */
+    transition: background-color 0.3s ease; /* Add a transition effect */
+  }
+  .navbar span:hover::after,
+.navbar a:hover::after {
+  background-color: #ff9640; /* Change this to your desired hover underline color */
+}
+
+  
+

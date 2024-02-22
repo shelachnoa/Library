@@ -1,0 +1,21 @@
+<!-- <p>topten-list works!</p> -->
+
+<div class="container-fluid mt-5">
+    <div class="container popular p-4">
+        <div class="headline text-center mb-5 pb-3">
+            <mat-divider></mat-divider>
+            <h1 class="mt-4 mb-4 populars">OUR POPULARS</h1>
+            <mat-divider></mat-divider>
+        </div>
+
+        <div class="row mb-5" *ngFor="let item of topten; let i = index">
+
+            <div class="col-2 index">
+                <h1 class="p-0 m-0">#{{i+1}}</h1>
+            </div>
+            <div class="col-9">
+                <app-topten [book]="item"></app-topten>
+            </div>
+        </div>
+    </div>
+</div>

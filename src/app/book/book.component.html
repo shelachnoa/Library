@@ -1,0 +1,44 @@
+<div>
+
+  <!-- <span *ngIf="!book?.isBorrowed"> -->
+  <span *ngIf="book?.numOfCopies!>1"  matBadge={{book?.numOfCopies}} matBadgeSize="medium" matBadgeColor="primary">
+    <mat-card class="example-card">
+      <img mat-card-image src="{{book?.image}}" alt="Photo of a Shiba Inu" height="300">
+      <mat-card-content>
+        <h2 class="m-0 p-0">{{book?.bookName}}</h2>
+        <p class=" m-0 author">
+          {{book?.author}}
+        </p>
+        <hr class="m-1">
+        <p class="m-0 p-0">{{book?.category}}</p>
+        <p class="m-0 p-0">{{book?.publisherId?.name}} | {{book?.price}}</p>
+      </mat-card-content>
+      <mat-card-actions align="end">
+        <button mat-button color="primary" (click)="addCopies()">➕</button>
+        <button mat-button color="primary" (click)="getCopies(book?.code!)">Copies</button>
+      </mat-card-actions>
+    </mat-card>
+    <!-- </span> -->
+  </span>
+
+  <span *ngIf="book?.numOfCopies==1">
+    <mat-card class="example-card">
+      <img mat-card-image src="{{book?.image}}" alt="Photo of a Shiba Inu" height="300">
+      <mat-card-content>
+        <h2 class="m-0 p-0">{{book?.bookName}}</h2>
+        <p class=" m-0 author">
+          {{book?.author}}
+        </p>
+        <hr class="m-1">
+        <p class="m-0 p-0">{{book?.category}}</p>
+        <p class="m-0 p-0">{{book?.publisherId?.name}} | {{book?.price}}</p>
+      </mat-card-content>
+      <mat-card-actions align="end">
+        <button mat-button color="primary" (click)="addCopies()">➕</button>
+        <button mat-button color="warn" (click)="deleteBook(book?.code!)">Delete</button>
+      </mat-card-actions>
+    </mat-card>
+    <!-- </span> -->
+  </span>
+</div>
+

@@ -1,0 +1,19 @@
+<mat-card class="example-card w-100 mb-2">
+    <!-- <div class="row"> -->
+        <!-- <div class="col-6">
+            <img class="bookImg" src="{{copy?.bookCode?.image}}" alt="" height="200">
+        </div> -->
+        <!-- <div class="col-6"> -->
+            <mat-card-content>
+            <h1 class="m-0 pt-3 "><div>Copy: {{copy?.id}} {{copy?.bookCode?.bookName}}</div></h1>
+            <!-- <p class="mb-3 p-0 ">{{copy?.bookCode?.author}}</p>
+            <p class="m-0 p-0 ">{{copy?.bookCode?.category}}</p>
+            <p class="m-0 p-0 ">{{copy?.bookCode?.publisherId?.name}}</p>
+            <p class="m-0 p-0 ">{{copy?.bookCode?.price}} NIS</p> -->
+        <!-- </div> -->
+    </mat-card-content>
+    <!-- </div> -->
+    <mat-card-actions align="end">
+        <button mat-flat-button color="warn" (click)="deleteCopy(copy?.id!)">Delete</button>
+    </mat-card-actions>
+</mat-card>

@@ -1,0 +1,57 @@
+
+<mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" class="mb-3">
+    <mat-expansion-panel-header class="exp-pannel">
+        <mat-panel-title class="title">
+            <p>{{borrowing?.borrowedDate | date: 'dd/MM/yyyy'}}</p>
+        </mat-panel-title>
+        <mat-panel-description>
+            <div class="row w-100">
+                <div class=" col-md-4">
+                    <h2 class="m-0 p-0">{{borrowing?.bookId?.id}} {{borrowing?.bookId?.bookCode?.bookName}}</h2>
+                    <p class="m-0 p-0">{{borrowing ?.bookId?.bookCode?.author}}</p>
+                </div>
+                <div class="col-md-5 reader">
+                    <div>
+                    <p class="m-0 p-0">{{borrowing?.readerId?.fullName}}</p>
+                    <p *ngIf="borrowing?.returnedDate == null && borrowing?.delayDays" class="m-0 p-0 late">{{borrowing?.delayDays}} days late</p>
+                </div>
+                   
+                </div>
+                <div class="col-md-3  reader">
+                    <button *ngIf="borrowing?.returnedDate==null" mat-flat-button color="accent" (click)="returnBook()">return book</button>
+                    <button class="returned-btn" *ngIf="borrowing?.returnedDate!=null" mat-flat-button color="accent" disabled >Closed: {{borrowing?.returnedDate| date: ("dd/MM/yyyy")}}</button>
+                </div>
+            </div>
+        </mat-panel-description>
+    </mat-expansion-panel-header>
+    <!-- <p>I'm visible because I am open</p> -->
+    <div class="row">
+        <div class="col-4">
+            <!-- <app-book [book]="borrowing?.bookId!"></app-book> -->
+
+            <mat-card class="example-card">
+                <div class="row">
+                    <div class="col-5  ">
+                        <img class="bookImg" src="{{borrowing?.bookId?.bookCode?.image}}" alt="" height="200">
+                    </div>
+                    <div class="col-6  ">
+                        <h1 class="m-0 pt-3 ">{{borrowing?.bookId?.bookCode?.bookName}}</h1>
+                        <p class="mb-3 p-0 ">{{borrowing?.bookId?.bookCode?.author}}</p>
+                        <p class="m-0 p-0 ">{{borrowing?.bookId?.bookCode?.category}}</p>
+                        <p class="m-0 p-0 ">{{borrowing?.bookId?.bookCode?.publisherId?.name}}</p>
+                        <p class="m-0 p-0 ">{{borrowing?.bookId?.bookCode?.price}} NIS</p>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+        <div class="col-4">
+            <mat-card class="example-card mb-2">
+                <mat-card-header>
+                  <div mat-card-avatar class="example-header-image"></div>
+                  <mat-card-title><div>{{borrowing?.readerId?.fullName}}</div></mat-card-title>
+                  <mat-card-subtitle><div>{{borrowing?.readerId?.email}}</div></mat-card-subtitle>
+                </mat-card-header>
+              </mat-card>
+        </div>
+    </div>
+</mat-expansion-panel>

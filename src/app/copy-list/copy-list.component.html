@@ -1,0 +1,30 @@
+<h1 mat-dialog-title><div>Copies</div></h1>
+
+<mat-dialog-content>
+
+
+    <mat-card class="example-card w-100 mb-2">
+        <div class="row">
+            <div class="col-6">
+                <img class="bookImg" src="{{book.image}}" alt="" height="200">
+            </div>
+            <div class="col-6">
+                <mat-card-content>
+                    <h1 class="m-0 pt-3 "><div>{{book.bookName}}</div></h1>
+                    <p class="mb-3 p-0 ">{{book.author}}</p>
+                    <p class="m-0 p-0 ">{{book.category}}</p>
+                    <p class="m-0 p-0 ">{{book.publisherId?.name}}</p>
+                    <p class="m-0 p-0 ">{{book.price}} NIS</p>
+
+                </mat-card-content>
+            </div>
+        </div>
+    </mat-card>
+
+
+    <div *ngIf="copies.length">
+        <div *ngFor="let copy of copies" class="row">
+            <app-copy [copy]="copy"></app-copy>
+        </div>
+    </div>
+</mat-dialog-content>

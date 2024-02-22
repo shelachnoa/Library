@@ -1,0 +1,30 @@
+.headline>h1{
+    font-size: xx-large;
+    font-weight: bold;
+    color: rgb(5, 5, 179);
+}
+
+
+.index{
+    /* border: 1px solid red; */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+  
+}
+.index>h1{
+    font-size: 90px;
+    font-family: 'armana';
+
+}
+.populars{
+    font-family: 'armana';
+}
+@font-face {
+    font-family: 'armana';
+    src: url('../font/Amaranth-Regular.ttf');
+}
+
+*{
+    font-family: 'armana';
+}

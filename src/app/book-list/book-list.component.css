@@ -1,0 +1,23 @@
+
+.headline{
+    font-size: xx-large;
+    font-family: 'armana';
+    font-weight: bold;
+    color: rgb(72, 72, 207);
+}
+.subtitle{
+    font-weight: bold;
+}
+
+
+@font-face {
+    font-family: 'armana';
+    src: url('../font/Amaranth-Regular.ttf');
+}
+
+*{
+    font-family: 'armana';
+}
+button{
+    font-family: 'armana';
+}

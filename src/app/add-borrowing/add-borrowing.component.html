@@ -1,0 +1,33 @@
+<h2 mat-dialog-title>New borrowing</h2>
+<mat-dialog-content>
+<form (ngSubmit)="addBorrowing($event,borrowForm)" #borrowForm="ngForm" class="borrowing-form">
+    <p>add borrow</p>
+    <br>
+    <mat-form-field [color]="selectedBook && borrowForm.submitted ? 'warn' : 'primary'" class="w-100">
+        <mat-label>Select Book</mat-label>
+        <mat-select #selectedBook (selectionChange)="selectBook(selectedBook.value)" required>
+            <mat-option *ngFor="let book of books" [value]="book">
+                {{book.id}} {{book.bookCode.bookName}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="w-100">
+        <mat-label>Select Reader</mat-label>
+        <mat-select #selectedReader (selectionChange)="selectReader(selectedReader.value)" required>
+            <mat-option *ngFor="let reader of readers" [value]="reader">
+                {{ reader.fullName}} | {{reader.email}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <br>
+    <mat-form-field hideRequiredMarker class="w-100">
+        <mat-label>Borrow date</mat-label>
+        <input name="bookName" [value]="body.borrowedDate | date: ('dd/MM/yyyy')" matInput disabled>
+
+        <!-- <input name="bookName" [value]="body.borrowedDate | date: ("dd/MM/yyyy")" matInput disabled=""/> -->
+    </mat-form-field>
+    <br>
+    <button mat-button mat-dialog-close="" type="submit">Add</button>
+</form>
+</mat-dialog-content>

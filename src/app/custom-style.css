@@ -1,0 +1,25 @@
+:root {
+  --custom-primary: #3fb1b5; /* Replace with your desired custom primary color */
+}
+
+.custom-primary-theme {
+  background-color: var(--custom-primary);
+  color: #ffffff; /* Adjust text color for visibility on the dark background */
+}
+
+.mat-toolbar,
+.mat-tab-header,
+.mat-select
+/* Add more Angular Material components as needed */
+{
+  background-color: var(--custom-primary) !important;
+}
+
+.mat-toolbar,
+.mat-tab-header,
+.mat-select
+
+/* Add more Angular Material components as needed */
+{
+  color: #ffffff !important; /* Adjust text color for visibility on the dark background */
+}

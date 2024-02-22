@@ -1,0 +1,53 @@
+<h2 mat-dialog-title><div>Add new book</div></h2>
+<mat-dialog-content>
+    <form (ngSubmit)="addBook($event,bookForm)" #bookForm="ngForm" class="form-book">
+
+        <mat-form-field hideRequiredMarker class="w-100">
+            <mat-label>Your book name</mat-label>
+            <input name="bookName" [(ngModel)]="body.bookName" type="text" matInput required>
+        </mat-form-field>
+        <br>
+        <mat-form-field hideRequiredMarker class="w-100">
+            <mat-label>Author</mat-label>
+            <input name="author" [(ngModel)]="body.author" type="text" matInput required flex="nogrow">
+        </mat-form-field>
+        <br>
+        <mat-form-field class="w-100">
+            <mat-label>Select Category</mat-label>
+            <mat-select #selectedCategory (selectionChange)="selectCategory(selectedCategory.value)" required>
+                <mat-option *ngFor="let category of bookCategories" [value]="category">
+                    {{ category }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br>
+        <mat-form-field hideRequiredMarker class="w-100">
+            <mat-label>Price</mat-label>
+            <input name="price" [(ngModel)]="body.price" type="text" matInput required flex="nogrow">
+        </mat-form-field>
+        <br>
+
+        <mat-form-field class="w-100">
+            <mat-label>Select Publisher</mat-label>
+            <mat-select #selectedPublisher (selectionChange)="selectPublisher(selectedPublisher.value)" required
+                class="m-0 p-0">
+                <mat-option *ngFor="let publisher of publishers" [value]="publisher">
+                    {{ publisher.name }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>      
+        <br>
+        <a class="publisher-link mb-3 pb-3" (click)="openPublisherDialog()">Add publisher</a>
+        <br>
+        <mat-form-field hideRequiredMarker class="w-100 mt-3">
+            <mat-label>Cover image</mat-label>
+            <input name="coverImage" [(ngModel)]="body.image" type="text" matInput required>
+        </mat-form-field>
+        <mat-form-field hideRequiredMarker class="w-100 mt-3">
+            <mat-label>Copies</mat-label>
+            <input name="copies" [(ngModel)]="body.numOfCopies" type="text" matInput required>
+        </mat-form-field>
+        <br>
+        <button mat-button type="submit" mat-dialog-close>Add</button>
+    </form>
+</mat-dialog-content>

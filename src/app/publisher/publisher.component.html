@@ -1,0 +1,58 @@
+<mat-card class="example-card mb-2">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title><div>{{publisher?.name}}</div></mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div *ngIf="displayReport && !books.length"><p>There are no books for this publisher</p></div>
+    <div *ngIf="displayReport && books.length" #pdfContent class="m-2 off-screen-container">
+      <hr>
+      <h1 class="text-center">Payment report</h1>
+      <p class="text-center" >publisher: {{publisher?.name}}</p>
+      <table mat-table [dataSource]="books" class="mat-elevation-z8">
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="position">
+          <th mat-header-cell *matHeaderCellDef> No. </th>
+          <td mat-cell *matCellDef="let element; let index=index"> {{index+1}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.bookName}} </td>
+        </ng-container>
+
+        <!-- Author Column -->
+        <ng-container matColumnDef="author">
+          <th mat-header-cell *matHeaderCellDef> Author </th>
+          <td mat-cell *matCellDef="let element"> {{element.author}} </td>
+        </ng-container>
+
+        <!-- Price Column -->
+        <ng-container matColumnDef="price">
+          <th mat-header-cell *matHeaderCellDef> Price </th>
+          <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+        </ng-container>
+        <ng-container matColumnDef="amount">
+          <th mat-header-cell *matHeaderCellDef> amount </th>
+          <td mat-cell *matCellDef="let element"> {{element.numOfCopies}} </td>
+        </ng-container>
+        <!-- Define the header row -->
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+
+        <!-- Define the row -->
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      <p class="text-end mt-3 p-2 total">total: {{total}} NIS</p>
+    </div>
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <button *ngIf="!displayReport" mat-button color="primary" (click)="generateReport(publisher!)">Generate report</button>
+    <!-- <app-report [publisher]="publisher"></app-report> -->
+    <button *ngIf="displayReport && books.length" (click)="downloadPDF()" mat-button color="primary">Download pdf</button>
+<button *ngIf="displayReport" (click)="closeReport()" mat-button color="accent">close</button>
+<!-- <button mat-button color="warn">Delete</button> -->
+<button *ngIf="!displayReport" mat-button color="warn" (click)="deletePublisher()">Delete</button>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,19 @@
+<!-- <p>topten works!</p> -->
+
+        <mat-card class="example-card border">
+            <div class="row">
+                <div class="col-3  ">
+                    <img class="bookImg" src="{{book[0]?.bookCode?.image}}" alt="" width="200">
+                </div>
+                <div class="col-9">
+                    <h1 class="m-0 pt-3 bookname ">{{book[0]?.bookCode?.bookName}}</h1>
+                    <p class="mb-3 p-0 ">{{book[0]?.bookCode?.author}}</p>
+                    <div class="mb-3">Borrowed <label class="red-bold" >{{book[1]}}</label> times</div>
+                    <!-- <p class="m-0 p-0 ">{{book?.bookCode?.category}}</p>
+                    <p class="m-0 p-0 ">{{book?.bookCode?.publisherId?.name}}</p>
+                    <p class="m-0 p-0 ">{{book?.bookCode?.price}} NIS</p> -->
+                </div>
+            </div>
+        </mat-card>
+
+

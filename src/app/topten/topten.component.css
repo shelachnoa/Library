@@ -1,0 +1,18 @@
+.red-bold{
+    font-weight: bold;
+    color: brown;
+    font-size: large;
+}
+@font-face {
+    font-family: 'armana';
+    src: url('../font/Amaranth-Regular.ttf');
+}
+
+*{
+    font-family: 'armana';
+}
+.bookname{
+    font-family: 'armana';
+    font-weight: bolder;
+
+}

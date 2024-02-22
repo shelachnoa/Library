@@ -1,0 +1,19 @@
+.author{
+    font-weight: bolder;
+}
+
+
+h2{
+    font-family: 'armana';
+    font-weight: bold;
+}
+
+
+@font-face {
+    font-family: 'armana';
+    src: url('../font/Amaranth-Regular.ttf');
+}
+
+*{
+    font-family: 'armana';
+}

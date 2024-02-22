@@ -1,0 +1,12 @@
+
+<mat-card class="example-card mb-2">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title><div>{{reader?.fullName}}</div></mat-card-title>
+      <mat-card-subtitle><div>{{reader?.email}}</div></mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-actions align="end">
+    <button mat-button color="warn" (click)="deleteReader()">Delete</button>
+    </mat-card-actions>
+  </mat-card>
+  

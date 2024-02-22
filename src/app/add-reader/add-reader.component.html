@@ -1,0 +1,17 @@
+<h2 mat-dialog-title>Add new Reader</h2>
+<mat-dialog-content>
+<form (ngSubmit)="addReader($event,readerForm)"  #readerForm="ngForm" >
+    <mat-form-field hideRequiredMarker >
+        <mat-label>Full name</mat-label>
+        <input name="fullName" [(ngModel)]="body.fullName" type="text" matInput required>
+    </mat-form-field>
+    <br>
+    <mat-form-field hideRequiredMarker>
+        <mat-label>Email</mat-label>
+        <input name="email" [(ngModel)]="body.email" type="text" matInput required  flex="nogrow">
+    </mat-form-field>
+    <br>
+    
+    <button mat-button mat-dialog-close type="submit">Add</button>
+    </form>
+</mat-dialog-content>

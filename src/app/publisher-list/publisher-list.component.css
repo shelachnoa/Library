@@ -1,0 +1,16 @@
+.add-button{
+    position: fixed;
+    z-index: 1;
+}
+.headline{
+    font-size: xx-large;
+    font-weight: bold;
+    color: rgb(72, 72, 207);
+}
+.subtitle{
+    font-weight: bold;
+}
+.publishers-row{
+    /* justify-content: space-evenly; */
+    padding: 20px;
+}
